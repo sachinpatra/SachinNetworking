@@ -14,7 +14,7 @@ public enum SachinNetworkError: Error {
     case requestFailed
 }
 
-public protocol SachinNetworkProtocol {
+  public protocol SachinNetworkProtocol {
     func fetchUsingPublisher<T: Codable>(urlString: String) -> AnyPublisher<T, Error>
     func fetchUsingDataTaskCompletion<T: Codable>(urlString: String) -> AnyPublisher<T, Error>
     func fetchUsingData<T: Codable>(urlString: String) async throws -> T
