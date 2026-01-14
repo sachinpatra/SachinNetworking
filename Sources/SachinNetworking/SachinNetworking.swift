@@ -23,6 +23,8 @@ public enum SachinNetworkError: Error {
 }
 
 public struct SachinNetwork: SachinNetworkProtocol {
+    public init() {}
+    
     public func fetchUsingData<T>(urlString: String) async throws -> T where T : Decodable, T : Encodable {
         do {
             let (data, response) = try await URLSession.shared.data(for: URLRequest(url: URL(string: urlString)!))
